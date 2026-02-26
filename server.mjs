@@ -153,7 +153,10 @@ const resolvers = {
 
         if(!quotes || quotes.length === 0){
           console.warn(`[Warning] No ticker found for ISIN: ${isin}`);
-          return null;
+          return {
+            isin,
+            ticker : null
+          };
         }
 
         return {
